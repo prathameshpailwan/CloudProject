@@ -1,0 +1,287 @@
+/* General Table Styling */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Table Header Styling */
+  .table thead {
+    background-color: #dee1e6;
+    color: #fff;
+  }
+  
+  .table thead th {
+    padding: 12px 15px;
+    text-align: left;
+    font-weight: bold;
+    color : black;
+  }
+  
+  /* Table Body Styling */
+  .table tbody tr {
+    background-color: #f9f9f9;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  /* Hover Effect on Rows */
+  .table tbody tr:hover {
+    background-color: #f1f1f1;
+    cursor: pointer;
+  }
+  
+  /* Table Data Cells Styling */
+  .table td {
+    padding: 12px 15px;
+    text-align: left;
+  }
+  
+  /* Responsive Table */
+  .table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  @media (max-width: 768px) {
+    .table {
+      font-size: 14px;
+    }
+  
+    .table thead th,
+    .table td {
+      padding: 10px;
+    }
+  }
+  .teams-container {
+    display: flex;
+    gap: 0; /* Adds space between the team items */
+    flex-wrap: wrap;
+  }
+  
+  .team {
+    padding: 5px 10px;
+    font-weight: bold;
+    border-radius: 20px;
+    border: 2px solid transparent; /* Initially set border as transparent */
+    margin: 0 ; /* Optional: Adds a little spacing around the border */
+    display: inline-flex;
+  }
+  
+  .team span {
+    display: block;
+    padding: 5px 10px;
+    border-radius: 20px;
+    color: inherit; /* Inherit text color from parent */
+  }
+
+  .profile-icon {
+    width: 40px;
+    height: 40px;
+    background-color: #ccc; /* Light gray background for the icon */
+    color: white; /* White text for the initials */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%; /* Makes the div circular */
+    font-size: 18px;
+    font-weight: bold;
+    margin-right: 10px; /* Adds a little spacing between the icon and name */
+    text-transform: uppercase; /* Makes the initials uppercase */
+}
+
+.name-cell {
+    display: flex;
+    align-items: center; /* Aligns items vertically in the center */
+}
+.delete-icon {
+    background-color: #f44336; /* Red background */
+    color: white;
+  }
+  
+  /* Adding space between buttons using gap (with flex) */
+  .actions {
+    gap: 10px; /* Adjust the space between buttons */
+  }
+  .container {
+    width: 90%;
+    margin: 0 auto;
+    padding-left: 20px;      /* Add padding to the left */
+    padding-right: 0; }
+
+/* Cards container for the 2 top cards */
+.top-cards {
+    display: flex;
+    gap: 20px; /* Space between the cards */
+    margin-bottom: 20px; /* Space between the top cards and the full-width card */
+}
+
+/* General card styling */
+.card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Card header styling */
+.card-header {
+  padding: 4px 4px;
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #ddd;
+}
+.card-content
+{
+  margin-top: 0; /* Remove space above */
+  padding-top: 0;
+  margin-bottom: 16px;  /* Add space below to push footer down */
+
+}
+
+/* Card body styling */
+.card-body.custom-height {
+  min-height: 180px;
+  max-height: 240px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-left: 10px;  /* space on the left */
+  padding-right: 10px; /* space on the right */
+}
+
+/* Graph card styling (60% width) */
+.graph-card {
+    width: 70%;
+}
+.table-card {
+  width: 30%;
+}
+
+/* Full-width card for the table */
+.table-full-card {
+  width: 100%;
+}
+
+.card-content h5 {
+  font-size: 1rem;
+  margin-bottom: 5px;
+  margin: 0;
+}
+
+.card-content p {
+  font-size: 0.875rem;
+  margin-bottom: 0;
+  margin: 0;
+}
+
+.custom-card {
+  max-width: 320px; /* or 280px, adjust as needed */
+  margin: auto;
+  padding: 15px;
+}
+canvas {
+  width: 100% !important;
+  height: auto !important;
+}
+.chart-container {
+  width: 170px;   /* make the doughnut chart smaller */
+  height: 170px;
+  margin-bottom: 0; /* Ensure no extra space below */
+  padding: 0;
+}
+.chart-center-text {
+  position: absolute;
+  top: 32%;
+  left: 74%;
+  transform: translate(-50%, -30%); /* Adjust vertical position for half-doughnut */
+  font-size: 22px;
+  font-weight: bold;
+  color: #333;
+  pointer-events: none; /* Let clicks go through to the canvas if needed */
+}
+.card-header h4,
+.card-header p {
+  margin: 0;                      /* remove default vertical margin */
+  line-height: 1.2;               /* tighter spacing */
+}
+.pagination-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.pagination-btn {
+  border: 1px solid #ccc;
+  background-color: #f0f0f0;
+  color: #333;
+  padding: 8px 16px;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.pagination-btn:hover {
+  background-color: #ddd;
+}
+
+.pagination-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.pagination-btn.active {
+  background-color: #007bff;
+  color: white;
+}
+
+/* Center the page number buttons */
+.page-numbers {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+.card-Graphbody {
+  display: flex;
+  justify-content: flex-end; /* Aligns button to the right */
+  padding: 12px 16px;
+  border-top: 1px solid #ddd;
+}
+
+.view-report-btn {
+  padding: 6px 12px;
+  font-size: 14px;
+  background-color: #9406a1;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.welcome-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px; /* Optional spacing below */
+}
+
+.welcome-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.header-btn {
+  padding: 6px 12px;
+  font-size: 14px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.header-btn:hover {
+  background-color: #0056b3;
+}

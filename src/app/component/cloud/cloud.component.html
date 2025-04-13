@@ -1,0 +1,118 @@
+<div class="container">
+    <div class="welcome-header">
+        <h2>Welcome Back Olivia</h2>
+        <div class="welcome-buttons">
+            <button class="header-btn icon-btn">🔍</button>
+            <button class="header-btn">Customize</button>
+            <button class="header-btn">Reports</button>
+        </div>
+    </div>
+    <div class="top-cards">
+        <div class="card graph-card">
+            <div class="card-header">
+                <h4>Vendor Breakdown</h4>
+                <p>Keep track of vendors and their security ratings.</p>
+            </div>
+            <div class="card-body custom-height" style="display: block;">
+                <canvas baseChart [data]="barChartData" [options]="barChartOptions" [type]="barChartType"
+                    [legend]="barChartLegend">
+                </canvas>
+            </div>
+            <div class="card-Graphbody">
+                <button class="view-report-btn">View Full Report</button>
+            </div>
+        </div>
+        <div class="card table-card">
+            <div class="card-header">
+                <h4> Vendors Monitored </h4>
+                <p>you're using 80%of available spots</p>
+            </div>
+            <div class="card-body custom-height">
+                <div class="chart-container">
+                    <canvas baseChart [data]="halfDoughnutChartData" [options]="halfDoughnutChartOptions"
+                        [type]="halfDoughnutChartType">
+                    </canvas>
+                    <div class="chart-center-text">300</div>
+                </div>
+                <div class="card-content" style="display: block;">
+                    <h5>You've almost reached your limit</h5>
+                    <p> You have used 80% of your available spots.
+                        Upgrade plan to monitor more vendors.</p>
+                </div>
+            </div>
+            <div class="card-Graphbody">
+                <button class="view-report-btn">Upgrade Plan</button>
+            </div>
+        </div>
+    </div>
+    <div class="card table-full-card">
+        <div class="card-header">
+            Table Data
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th><input type="checkbox" (change)="selectAllRows($event)" /></th>
+                            <th *ngFor="let data of cloudHeader">{{ data.column_name }}</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let row of grid_data">
+                            <td><input type="checkbox" [(ngModel)]="row.selected" /></td>
+                            <td class="name-cell">
+                                <div class="profile-icon">
+                                    {{ row.name.first_name[0] }}{{ row.name.last_name[0] }}
+                                </div>
+                                {{row.name.first_name }} {{row.name.last_name}}
+                            </td>
+                            <td>{{ row.status }}</td>
+                            <td>{{ row.role }}</td>
+                            <td>{{ row.license_used }}</td>
+                            <td class="teams-container">
+                                <div *ngFor="let team of row.teams" class="team">
+                                    <span [style.background-color]="team.background_color"
+                                        [style.color]="team.text_color">
+                                        {{ team.value }}
+                                    </span>
+                                </div>
+                            </td>
+                            <td class="actions">
+                                <button class="icon delete-icon" (click)="deleteRow(row)" aria-label="Delete Row">
+                                    🗑
+                                </button>
+                                <button class="icon edit-icon" aria-label="Edit Row">
+                                    ✎
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="pagination-container">
+                <!-- Previous Button -->
+                <button (click)="goToPreviousPage()" [disabled]="currentPage === 1" class="pagination-btn">
+                    &laquo; Previous
+                </button>
+
+                <!-- Page Numbers -->
+                <div class="page-numbers">
+                    <button *ngFor="let page of totalPagesArray" (click)="goToPage(page)"
+                        [class.active]="currentPage === page" class="pagination-btn">
+                        {{ page }}
+                    </button>
+                </div>
+
+                <!-- Next Button -->
+                <button (click)="goToNextPage()" [disabled]="currentPage === totalPages" class="pagination-btn">
+                    Next &raquo;
+                </button>
+            </div>
+
+
+        </div>
+    </div>
+
+</div>

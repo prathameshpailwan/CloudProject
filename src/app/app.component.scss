@@ -1,0 +1,47 @@
+.layout {
+    display: flex;
+    min-height: 100vh;
+  }
+  
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: 100vh;
+    background-color: rgb(221, 230, 239);
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    z-index: 1000; /* ensures it stays above other elements */
+  }
+  
+  
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .sidebar li {
+    margin: 20px 0;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+  
+  .sidebar li:hover {
+    transform: scale(1.2);
+  }
+  
+  .sidebar .icon {
+    font-size: 24px;
+  }
+  
+  /* Push your content to make space for the sidebar */
+  .container {
+    flex: 1;
+    padding: 20px;
+  }
+  
