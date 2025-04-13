@@ -6,11 +6,16 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class CloudService {
-  private apiUrl = 'https://01.fy25ey01.64mb.io/';  // Use the full API URL
+ // private apiUrl = 'https://01.fy25ey01.64mb.io/';  // Use the full API URL
+  private apiUrl = 'assets/cloud.json'; 
 
   constructor(private http: HttpClient) { }
 
-  getGridData(): Observable<any> {
-    return this.http.get(this.apiUrl);  // Make GET request with the full API URL
-  }
+  /* getGridData(): Observable<any> {
+    return this.http.get(this.apiUrl); 
+  } */
+    getGridData(): Observable<any> {
+      debugger
+      return this.http.get<any>(this.apiUrl);
+    }
 }
