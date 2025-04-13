@@ -14,6 +14,8 @@ export class CloudService {
   getGridData(): Observable<any> {
     return this.http.get(this.apiUrl); 
   }
+
+  //fetch through json
    /*  getGridData(): Observable<any> {
       debugger
       return this.http.get<any>(this.apiUrl);
